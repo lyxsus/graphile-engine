@@ -235,19 +235,19 @@ export class LDSLiveSource {
       case "insertC": {
         const { schema, table, data } = announcement;
         const topic = JSON.stringify([schema, table]);
-        this.announce(topic, data);
+        this.announce(topic, data, false);
         return;
       }
       case "updateC": {
         const { schema, table, data } = announcement;
         const topic = JSON.stringify([schema, table]);
-        this.announce(topic, data);
+        this.announce(topic, data, false);
         return;
       }
       case "update": {
         const { schema, table, keys, data } = announcement;
         const topic = JSON.stringify([schema, table, keys]);
-        this.announce(topic, data);
+        this.announce(topic, data, false);
         return;
       }
       case "delete": {
@@ -255,7 +255,7 @@ export class LDSLiveSource {
         const topicRow = JSON.stringify([schema, table, keys]);
         const topicTable = JSON.stringify([schema, table]);
 
-        this.announce(topicRow, keys);
+        this.announce(topicRow, keys, false);
         this.announce(topicTable, keys, true);
         return;
       }
