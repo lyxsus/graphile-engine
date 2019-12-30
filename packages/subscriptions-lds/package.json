@@ -1,5 +1,5 @@
 {
-  "name": "@graphile/subscriptions-lds",
+  "name": "@zombee/subscriptions-lds",
   "version": "4.6.0-alpha.0",
   "description": "Subscriptions plugin for PostGraphile using PostgreSQL logicial decoding",
   "main": "dist/index.js",

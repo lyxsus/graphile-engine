@@ -213,10 +213,15 @@ export class LDSLiveSource {
     };
   }
 
-  private announce(topic: string, dataOrKey: any) {
+  private announce(topic: string, dataOrKey: any, always: any) {
     const subs = this.subscriptions[topic];
     if (subs) {
       subs.forEach(([callback, predicate]) => {
+        if (always) {
+          callback();
+          return;
+        }
+
         if (predicate && !predicate(dataOrKey)) {
           return;
         }
@@ -247,8 +252,11 @@ export class LDSLiveSource {
       }
       case "delete": {
         const { schema, table, keys } = announcement;
-        const topic = JSON.stringify([schema, table, keys]);
-        this.announce(topic, keys);
+        const topicRow = JSON.stringify([schema, table, keys]);
+        const topicTable = JSON.stringify([schema, table]);
+
+        this.announce(topicRow, keys);
+        this.announce(topicTable, keys, true);
         return;
       }
       default: {
