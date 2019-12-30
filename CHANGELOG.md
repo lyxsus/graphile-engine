@@ -3,7 +3,11 @@
 We use PostGraphile's GitHub releases tab to log our changes in detail, but
 this auto-generated changelog helps us to produce that list, and it may be
 helpful to you also.
-# [](https://github.com/lyxsus/graphile-engine/compare/v4.6.0-alpha.0...v) (2019-12-30)
+# [](https://github.com/lyxsus/graphile-engine/compare/v4.6.1-alpha.0...v) (2019-12-30)
+
+
+
+## [4.6.1-alpha.0](https://github.com/lyxsus/graphile-engine/compare/v4.6.0-alpha.0...v4.6.1-alpha.0) (2019-12-30)
 
 
 ### Features
